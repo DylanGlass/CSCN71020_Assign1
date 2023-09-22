@@ -17,15 +17,17 @@ void main() {
 
 	printf("Enter operation number: ");
 	scanf_s("%1o", &inputNum);
-
+	// Added missing breaks to stop the switch from continuing from add() to subtract() it now exits when add() is finished exicuting.
 	switch (inputNum)
 	{
 	case 1:
 		add();
+		break; 
 	case 2:
 		subtract();
+		break;
 	}
-	return(EXIT_SUCCESS);
+	return(EXIT_SUCCESS); // Return 0 for a successful operation.
 }
 
 void printWelcomeMenu() {
@@ -48,8 +50,8 @@ void add() {
 	scanf_s("%lf", &num2);
 	result = num1 + num2;
 	printf("%lf + %lf = %lf\n", num1, num2, result);
-	exit(EXIT_SUCCESS);
 }
+// Removed old subtract() which was dividing.
 void subtract(void) {
 	double num1, num2, result;
 	printf("Enter the first value:");
@@ -58,5 +60,4 @@ void subtract(void) {
 	scanf_s("%lf", &num2);
 	result = num1 - num2;
 	printf("%lf - %lf = %lf\n", num1, num2, result);
-	exit(EXIT_SUCCESS);
 }
